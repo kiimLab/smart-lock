@@ -1,5 +1,6 @@
 # smart-lock
 
+```
 class Servo():
   コンストラクタ(pin)
     PIN=pin
@@ -26,4 +27,4 @@ class Servo():
     内部状態変更
     sleep
   
-  
+  ```
