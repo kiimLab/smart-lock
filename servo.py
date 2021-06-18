@@ -2,14 +2,16 @@ import RPi.GPIO as GPIO
 import time
 
 class Servo:
-    def __init__(self):
+    def __init__(self, interval=1, pin=14, freq=50, open_duty=12.0, close_duty=7.25):
         # define constants
-        self.INTERVAL = 1
-        self.PIN = 14
-        self.FREQ = 50 # Hz
+        self.INTERVAL = interval
+        self.PIN = pin
+        self.FREQ = freq # Hz
+        self.OPEN_DUTY = open_duty # +90[dec]
+        self.CLOSE_DUTY = close_duty # 0[dec]
+
+        # init internal state
         self.is_open = False
-        self.OPEN_DUTY = 12.0 # +90[dec]
-        self.CLOSE_DUTY = 7.25 # 0[dec]
 
         # setup gpio
         GPIO.setmode(GPIO.BCM)
